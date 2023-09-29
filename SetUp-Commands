@@ -44,6 +44,11 @@ EOF
    34  sudo kubeadm init --control-plane-endpoint=master.example.net
    35  
    36  sudo kubeadm init --control-plane-endpoint=master.example.net --ignore-preflight-errors=FileContent--proc-sys-net-ipv4-ip_forward
+    after the above command type these to connect the cluster we created to the ports
+        mkdir -p $HOME/.kube
+        sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+        sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    
    37  
    38  clear
    
